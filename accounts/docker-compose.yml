@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+
+  accounts:
+    image: bitsbank/accounts:latest
+    mem_limit: 700m
+    ports:
+      - "8080:8080"
+    networks:
+      - bitsbank-network
+    
+  loans:
+    image: bitsbank/loans:latest
+    mem_limit: 700m
+    ports:
+      - "8090:8090"
+    networks:
+      - bitsbank-network
+    
+  cards:
+    image: bitsbank/cards:latest
+    mem_limit: 700m
+    ports:
+      - "9000:9000"
+    networks:
+      - bitsbank-network
+    
+networks:
+  bitsbank-network:
